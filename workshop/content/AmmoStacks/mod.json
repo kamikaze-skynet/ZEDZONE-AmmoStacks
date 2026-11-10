@@ -1,0 +1,7 @@
+{
+    "name": "AmmoStacks",
+    "version": "1.0.0",
+    "author": "girthy_mods",
+    "description": "Bullets and arrows stack to 100 and weigh nothing. Loot, shops and rewards still hand out the same stack sizes as the base game.",
+    "enabled": true
+}

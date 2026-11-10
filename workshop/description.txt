@@ -1,0 +1,21 @@
+[h1]AmmoStacks - 100-round stacks, zero weight[/h1]
+
+[list]
+[*][b]Bullets and shells stack to 100.[/b]
+[*][b]Arrows and bolts stack to 100.[/b]
+[*][b]Ammo and arrows weigh nothing.[/b]
+[*][b]Loot is unchanged:[/b] crates, shelves, corpses, vehicles, traders, rewards and dismantle drops roll the same amounts and give ammo in the same stack sizes as the base game. The bigger stacks only kick in once the ammo is yours.
+[*]Works on modded ammo and arrows too.
+[/list]
+
+[h2]Requires[/h2]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3834614258]ZED ZONE Code Mod Loader[/url] - run its install.cmd once, then start the game through Steam.
+
+[h2]Co-op[/h2]
+Everyone should subscribe. Stack sizes are checked on each player's own PC.
+
+[h2]Uninstalling[/h2]
+Stacks bigger than the base-game size stay as they are in your save. Split them first if you want them back to normal.
+
+Config: BepInEx/config/girthy_mods.zedzone.ammostacks.cfg (stack sizes, weight on/off, vanilla loot on/off).
+Source and issues: https://github.com/kamikaze-skynet/ZEDZONE-AmmoStacks
