@@ -18,7 +18,7 @@ Bigger ammo stacks for ZED ZONE.
 - **Steam Workshop:** subscribe to AmmoStacks. The loader picks it up automatically.
 - **Manually:** put `AmmoStacks.dll` in `%USERPROFILE%\AppData\LocalLow\LevenLiu\ZEDZONE\Mods\AmmoStacks\`.
 
-Start the game through Steam. `BepInEx\LogOutput.log` should show `AmmoStacks 1.0.0 loaded`, followed by one line per ammo / arrow item with its old and new stack size and weight.
+Start the game through Steam. `BepInEx\AmmoStacks.log` should show `AmmoStacks 1.0.1 loaded. Loot hooks: 53/53 attached`, then one `[items]` line per ammo / arrow item with its old and new stack size and weight.
 
 **Co-op:** everyone should have it. Stack sizes are checked on each player's own PC, so a player without the mod keeps the base-game stacks.
 
@@ -33,7 +33,28 @@ Start the game through Steam. `BepInEx\LogOutput.log` should show `AmmoStacks 1.
 | `Weight.RemoveAmmoWeight` | `true` | Bullets / shells weigh nothing. |
 | `Weight.RemoveArrowWeight` | `true` | Arrows / bolts weigh nothing. |
 | `Loot.KeepVanillaLootStacks` | `true` | Loot rolls and splits ammo with the original stack sizes. Off: loot can come in bigger stacks. |
-| `Debug.VerboseLog` | `false` | Log (every 50th time) when loot is made with the vanilla stacks. |
+| `Debug.VerboseLog` | `false` | Extra log detail: every hook attached, loot call counts per method, every ammo loot roll. Turn on when reporting a problem. |
+
+## Logs and troubleshooting
+
+AmmoStacks writes its own log to `BepInEx\AmmoStacks.log` (rewritten each launch; the previous launch is kept as `AmmoStacks.prev.log`). Everything also goes to `BepInEx\LogOutput.log`. Each line has a time, a level and a category:
+
+| Category | What it covers |
+|---|---|
+| `[start]` | Game / Unity / BepInEx versions, config, each loot hook (attached / not found / failed), other loaded plugins |
+| `[items]` | Every ammo / arrow item changed: old and new stack size and weight |
+| `[loot]` | First call of each loot hook, ammo loot rolls that came out bigger than vanilla, stuck loot scopes |
+| `[watch]` | Something else (game reload, another mod) changed the ammo stack sizes or weights |
+| `[status]` | Summary every 5 minutes and on exit: items tracked, hooks fired, loot rolls checked, errors / warnings |
+| `[error]` | Anything that failed, with the full exception (repeats throttled) |
+
+What to look for:
+
+- **Stacks still at the old size:** no `[items]` lines, or an `[error]` near them. Check the `[start]` lines show the mod loaded.
+- **Loot coming in bigger stacks:** a `[loot] Loot roll ... bigger than the vanilla stack` warning, or a `[start] loot method(s) not in this game version` warning after a game update.
+- **Stacks resetting:** `[watch]` warnings. Usually another mod that edits items. The plugin list in `[start]` shows what else is loaded.
+
+When reporting a problem, set `Debug.VerboseLog = true`, reproduce it, and send `BepInEx\AmmoStacks.log`.
 
 ## How loot stays vanilla
 
