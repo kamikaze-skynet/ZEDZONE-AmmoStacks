@@ -19,3 +19,6 @@ Stacks bigger than the base-game size stay as they are in your save. Split them 
 
 Config: BepInEx/config/girthy_mods.zedzone.ammostacks.cfg (stack sizes, weight on/off, vanilla loot on/off).
 Source and issues: https://github.com/kamikaze-skynet/ZEDZONE-AmmoStacks
+
+[h2]Settings and keys: Mod Menu[/h2]
+Press [b]F11[/b] in game to open [b]Mod Menu[/b] (Steam installs it with this mod) to change this mod's settings without editing files.
