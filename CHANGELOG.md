@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+- Works with Mod Menu (F11): change this mod's settings in game. No gameplay change.
+- Same version number as on Girthy Mods.
+
 ## 1.0.1
 - Own log file: `BepInEx\AmmoStacks.log` (previous launch kept as `AmmoStacks.prev.log`), with categories `[start] [items] [loot] [watch] [status] [error]`.
 - Logs game / Unity / BepInEx versions, the config, every loot hook (attached, missing, failed) and the other loaded plugins.
