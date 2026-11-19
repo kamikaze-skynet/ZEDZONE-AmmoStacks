@@ -8,10 +8,10 @@ Bigger ammo stacks for ZED ZONE.
 - **Loot is unchanged.** Crates, shelves, corpses, vehicles, traders, rewards and dismantle drops still roll the same amounts and hand ammo out in the same stack sizes as the base game. You only see the bigger stacks once the ammo is yours (picking up, merging stacks, chests, crafting, buying).
 - Works on modded ammo / arrows too (anything with item type Ammo or Arrow).
 
-## Requirements
+## Requires
 
 - ZED ZONE (Windows, Steam)
-- [ZED ZONE Code Mod Loader](https://steamcommunity.com/sharedfiles/filedetails/?id=3834614258) (BepInEx 6 IL2CPP + ZedModsLoader). Run its `install.cmd` once.
+- [ZED ZONE Code Mod Loader](https://steamcommunity.com/sharedfiles/filedetails/?id=3834614258) - run its install.cmd once, then start the game through Steam.
 
 ## Install
 
